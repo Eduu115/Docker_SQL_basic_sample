@@ -1,0 +1,23 @@
+1º abrimos docker desktop (o iniciamos el motor de docker)
+
+------------------------------------------------------------
+
+2º ejecutamos el comando:
+    docker compose up -d
+
+------------------------------------------------------------
+
+3º Ejecutamos el comando para entrar en psql:
+
+                                |-----> cliente de linea de comandos
+                                |       |
+                                |       |----> usuario de la db con el que 
+                                |       |
+                                |----   |--------
+    docker exec -it pg-practica psql -U postgres -d baseDatosPrueba
+                    |-----------                    |---------------
+                    |                               |
+                    |                               |---> nombre de la db
+                    |
+                    |
+                    |-----> nombre del contenedor

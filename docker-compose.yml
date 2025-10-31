@@ -1,0 +1,16 @@
+services: # seccion que lista los servicios ( contenedores ) a levantar, en este caso tenemos
+  db: # nombre del servicio
+    image: postgres:16 # imagen que se va a ejecutar
+    container_name: pg-practica # Nombre fijo del contenedor
+    restart: unless-stopped # política de reinicio
+    environment: # variables de entorno
+      POSTGRES_USER: postgres # crea el usuario admin con este nombre
+      POSTGRES_PASSWORD: postgres # pw de este usuario
+      POSTGRES_DB: baseDatosPrueba # crea una db con este nombre
+    ports: # publica el puerto del contenedor hacia nuestra maquina
+      - "5432:5432" # acceso desde tu maquina
+    volumes: # monta un volumen nombrado pgdata en la ruta de postgreSQL
+      - pgdata:/var/lib/postgresql/data
+  
+volumes: #declara el volumen pgdata
+  pgdata: 
