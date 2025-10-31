@@ -21,3 +21,22 @@
                     |
                     |
                     |-----> nombre del contenedor
+
+4º Creamos la tabla que queramos (es importante que usar snake case es una buena practica en postgreSQL)
+    
+    se introduce la linea del script en la CLI
+    
+    ----- oneliner:
+    Create Table courses(course_id Serial PRIMARY KEY, course_name VARCHAR(50) NOT NULL);
+    
+    ----- expandido:
+    Create Table courses(
+        course_id Serial PRIMARY KEY,
+         course_name VARCHAR(50) NOT NULL
+    );
+
+5º Checkeamos el estado de las tablas para verificar que se ha(n) creado:
+
+    \dt <-- database tables : muestra las tablas de la database
+
+    \d TABLA <-- muestra las definiciones concretamente una tabla (en este caso \d courses)
